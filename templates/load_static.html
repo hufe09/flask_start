@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {{title}} {% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/index.css') }}">
+    <script src="{{ url_for('static',filename='js/index.js') }}"></script>
+
+
+</head>
+
+<body>
+    <div class="nav">
+
+        <ul>
+            <li><a href="{{ url_for('load_static') }}">Load Static</a></li>
+            <li><a href="{{ url_for('picture') }}">Picture</a></li>
+            <li><a href="{{ url_for('music') }}">Music</a></li>
+        </ul>
+    </div>
+    {% block main %}
+    <h1>这是 {{ title }} 。</h1>
+    {% endblock %}
+    <img src="{{ url_for('static',filename='images/flask-icon.png') }}" alt="flask-icon">
+</body>
+
+</html>

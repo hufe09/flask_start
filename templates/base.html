@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {{title}} {% endblock %}</title>
+    <style>
+        .nav {
+            background: #3a3a3a;
+            height: 65px;
+        }
+
+        ul {
+            overflow: hidden;
+        }
+
+        ul li {
+            float: left;
+            list-style: none;
+            padding: 0 10px;
+            line-height: 65px;
+        }
+
+        ul li a {
+            color: aliceblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <ul>
+            <li><a href="{{ url_for('base') }}">Base</a></li>
+            <li><a href="{{ url_for('picture') }}">Picture</a></li>
+            <li><a href="{{ url_for('music') }}">Music</a></li>
+
+        </ul>
+    </div>
+    {% block main %}
+    <h1>这是 Base 。</h1>
+    {% endblock %}
+</body>
+
+</html>
